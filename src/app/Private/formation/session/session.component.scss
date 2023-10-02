@@ -1,0 +1,90 @@
+mat-card{
+    margin: 1rem;
+}
+.corps{
+    height:95vh;
+}
+.card-bodt{
+    max-height: 25rem;
+}
+
+table{
+    width:100%;
+}
+table th, table td{
+    padding:15px;
+    border: 1px solid black;
+    text-align:center;
+}
+table th{
+    background: #5A7987;
+    color: white;
+}
+.iconTab{
+    font-size: 24px;
+    width: 2rem;
+    min-width: 2rem;
+    align-items: center;
+  }
+
+.title{
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+    line-height: 70px;
+    color: #fff;
+    user-select: none;
+    background: linear-gradient(-135deg, #32434b, #32434b);
+  }
+
+.label{
+    font-size: 16px;
+    font-weight: 500;
+    color: #2e2e22;
+}
+.input{
+    outline: none;
+    font-size: 14px;
+    font-weight: 400px;
+    color: #333;
+    border-radius: 5px;
+    border: 1px solid #aaa;
+    padding: 0 15px ;
+    height: 42px;
+    margin: 8px 0;
+}
+
+.input-field input{
+    outline: none;
+    font-size: 14px;
+    font-weight: 400px;
+    color: #333;
+    border-radius: 5px;
+    border: 1px solid #aaa;
+    padding: 0 15px ;
+    height: 42px;
+    margin: 8px 0;
+}
+
+
+.fields{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.input-field1{
+    display: flex;
+    width: calc(100% / 2 - 15px);
+    flex-direction: column;
+    margin: 4px 0;
+}
+
+.button-container{
+    margin: 10px;
+    align-items: center;
+}
+.button-container button{
+    margin: 10px;
+}

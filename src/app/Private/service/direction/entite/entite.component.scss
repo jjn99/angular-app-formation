@@ -1,0 +1,68 @@
+.card{
+  background-color: #fff;
+  color:black;
+}
+.title{
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+  line-height: 100px;
+  color: #fff;
+  user-select: none;
+  background: linear-gradient(-135deg, #32434b, #32434b);
+}
+.container form{
+  position: relative;
+  margin: 10px;
+  min-height: auto;
+}
+.container form .details{
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.container form .title{
+  display: block;
+  margin-bottom: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  margin: 6px 0;
+  color: #333;
+}
+.container form .fields{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+form .fields .input-field{
+  display: flex;
+  width: calc(100% / 2 - 15px);
+  flex-direction: column;
+  margin: 4px 0;
+}
+.input-field label{
+  font-size: 16px;
+  font-weight: 500;
+  color: #2e2e22;
+}
+.input-field input{
+  outline: none;
+  font-size: 14px;
+  font-weight: 400px;
+  color: #333;
+  border-radius: 5px;
+  border: 1px solid #aaa;
+  padding: 0 15px ;
+  height: 42px;
+  margin: 8px 0;
+}
+.input-field input:is(:focus, :valid){
+  box-shadow: 0 3px 6px rgba(0,0,0,0.13);
+}
+.button-container{
+  margin: 10px;
+  align-items: center;
+}
+.button-container button{
+  margin: 10px;
+}

@@ -1,0 +1,30 @@
+<div class="card">
+    <div class=""> <h3 class="text-align-center"> Confirmation </h3> </div>
+    <mat-dialog-content class="mat-typography">
+        <hr>
+        <div class="flex align-items-center justify-content-center ng-tns-c79-249">
+        <i class="pi pi-exclamation-triange mr-3" style="font-size: 2rem;"></i>
+        <h5 class="pi pi-exclamation-triange">  Etes-vous sure de vouloir {{details?.message}} ?</h5>
+        </div>
+        <hr>
+    </mat-dialog-content>
+    <mat-dialog-actions  align="end">
+
+        <div  class="flex justify-content-between gap-3">
+
+            <button  pbutton="" pripple="" label="" icon="pi pi-fw pi-check"
+                    class="p-element p-ripple p-button-outlined p-button-success flex-1 p-button p-component"
+                    (click)="handleChangeAction()"
+                    ><span
+              class="p-button-icon p-button-icon-left pi pi-fw pi-check" aria-hidden="true"></span><span
+              class="p-button-label">Oui   </span><span class="p-ink"></span></button>
+
+              <button  pbutton="" pripple="" label="" 
+                     matDialogClose icon="pi pi-times"
+                      class="p-element p-ripple p-button-danger flex-1 p-button-outlined p-button p-component"><span
+                class="p-button-icon p-button-icon-left pi pi-times" aria-hidden="true"></span><span
+                class="p-button-label">Non   </span><span class="p-ink"></span></button>
+          </div>
+
+    </mat-dialog-actions>
+</div>

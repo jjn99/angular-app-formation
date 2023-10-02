@@ -1,0 +1,53 @@
+<div class="card">
+    <div class="container">
+    <div class="text-center"><h4> Formulaire Traitement Demande</h4></div>
+    <hr>
+    <form [formGroup]="registrationForm">
+        <div class="form first">
+            <div class="details personnal">
+                <div class="fields">
+                    <div class="input-field">
+                        <label>Statut inscription</label>
+                        <input type="text" value="Statut d'inscription {{action}}" disabled>
+                    </div>
+                    <div class="input-field w-full">
+                        <label>Entite</label>
+                        <select formControlName="idEntite" class="form-control p-inputtext p-component p-element" required>
+                          <option *ngFor="let direction of directions" [value]="direction?.idEntite">{{direction?.nom}}({{direction?.codeinputation}})</option>
+                        </select>
+                      </div>
+                </div>
+                    <div class="fields">
+                    <div class="input-field">
+                        <label>Object</label>
+                        <input type="text" formControlName="subject"  required>
+                    </div>
+                    </div>
+                    <div class="fields">
+                    <div class="input-field">
+                        <label>Message</label>
+                        <textarea></textarea>    
+                    </div>
+                    </div>
+                <hr>
+                <div  class="flex justify-content-between gap-3">
+  
+                    <button pbutton="" pripple="" label="Enregistrer" icon="pi pi-fw pi-check"
+                            class="p-element p-ripple p-button-outlined p-button-success flex-1 p-button p-component"
+                             (click)="submit()"
+                    ><span
+                      class="p-button-icon p-button-icon-left pi pi-fw pi-check" aria-hidden="true"></span><span
+                      class="p-button-label">Enregistrer</span><span class="p-ink"></span></button>
+              
+                    <button  pbutton="" pripple="" label="Annuler"
+                             icon="pi pi-times" mat-dialog-close
+                             class="p-element p-ripple p-button-danger flex-1 p-button-outlined p-button p-component"><span
+                      class="p-button-icon p-button-icon-left pi pi-times" aria-hidden="true"></span><span
+                      class="p-button-label">Annuler</span><span class="p-ink"></span></button>
+                  </div>
+            </div>
+        </div>
+ 
+    </form>
+</div>
+</div>

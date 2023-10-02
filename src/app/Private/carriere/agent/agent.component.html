@@ -1,0 +1,238 @@
+
+<p-dialog header="Header" (onHide)="onhide()" [(visible)]="visible" [closable]="false" [modal]="true" [style]="{ width: '800px' }" [draggable]="false" [resizable]="false">
+    <ng-template pTemplate="header">
+      <span class="text-xl font-bold">Formulaire Agent</span>
+    </ng-template>
+    <form [formGroup]="registrationForm">
+      <div class="form first">
+        <div class="details personnal">
+          <hr>
+          <div class="fields grid formgrid">
+            <div class="input-field col-12 mb-2 lg:col-4 lg:mb-0">
+              <label>Nom Prenom</label>
+              <input class="form-control" type="text" formControlName="nomprenom" required>
+              <app-form-validations [entityField]="'nomprenom'"
+                                    [formGroup]="registrationForm"></app-form-validations>
+            </div>
+  
+            <div class="input-field col-12 mb-2 lg:col-4 lg:mb-0" >
+              <label>Genre</label>
+             <!--  <p-dropdown [options]="genres" 
+                          class="w-full" 
+                          placeholder="Choisir le genre" 
+                          formControlName="genre">
+              </p-dropdown> -->
+              <select formControlName="genre" class="form-control">
+                <option>Femme</option>
+                <option>Homme</option>
+              </select>
+              <app-form-validations [entityField]="'genre'" [formGroup]="registrationForm"></app-form-validations>
+            </div>
+  
+            <div class="input-field col-12 mb-2 lg:col-4 lg:mb-0">
+              <label>Matricule</label>
+              <input type="text" formControlName="matricule"
+                     class="form-control"
+                     required>
+  
+              <app-form-validations [entityField]="'matricule'"
+                                    [formGroup]="registrationForm"></app-form-validations>
+            </div>
+            <div class="input-field col-12 mb-2 lg:col-4 lg:mb-0">
+              <label>Unite</label>
+              <input type="text" formControlName="unite"
+                     class="form-control"
+                     required>
+              <app-form-validations [entityField]="'unite'"
+                                    [formGroup]="registrationForm"></app-form-validations>
+            </div>
+            <div class="input-field col-12 mb-2 lg:col-4 lg:mb-0">
+              <label>Emploi</label>
+              <input type="text" formControlName="emploi"
+                     class="form-control"
+                     required>
+              <app-form-validations [entityField]="'emploi'" [formGroup]="registrationForm"></app-form-validations>
+            </div>
+            <div class="input-field col-12 mb-2 lg:col-4 lg:mb-0">
+              <label>Fonction</label>
+              <input type="text" formControlName="fonction"
+                     class="form-control"
+                     required>
+              <app-form-validations [entityField]="'fonction'" [formGroup]="registrationForm"></app-form-validations>
+            </div>
+            <div class="input-field col-12 mb-2 lg:col-4 lg:mb-0">
+              <label>Categorie</label>
+              <select formControlName="categorie" class="form-control">
+                <option>C01</option>
+                <option>C02</option>
+                <option>C03</option>
+                <option>C04</option>
+                <option>C05</option>
+                <option>C06</option>
+                <option>C07</option>
+                <option>C08</option>
+                <option>C09</option>
+                <option>CXX</option>
+              </select>
+              <app-form-validations [entityField]="'categorie'" [formGroup]="registrationForm"></app-form-validations>
+            </div>
+            <div class="input-field col-12 mb-2 lg:col-4 lg:mb-0">
+              <label>Echelon</label>
+              <input type="text" formControlName="echelon"
+                     class="form-control"
+                     required>
+              <app-form-validations [entityField]="'echelon'" [formGroup]="registrationForm"></app-form-validations>
+            </div>
+            <div class="input-field col-12 mb-2 lg:col-4 lg:mb-0">
+              <label>Date Entre Service</label>
+              <input type="date" formControlName="dateEntreServ" class="form-control">
+              <app-form-validations [entityField]="'dateEntreServ'" [formGroup]="registrationForm"></app-form-validations>
+            </div>
+            <div class="input-field col-12 mb-2 lg:col-4 lg:mb-0">
+              <label>Date Sortie Service</label>
+              <input type="date" formControlName="dateSortieServ" class="form-control">
+              <app-form-validations [entityField]="'dateSortieServ'" [formGroup]="registrationForm"></app-form-validations>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+    <ng-template pTemplate="footer">
+      <div  class="flex justify-content-between gap-3">
+  
+        <button pbutton="" pripple="" label="Enregistrer" icon="pi pi-fw pi-check"
+                class="p-element p-ripple p-button-outlined p-button-success flex-1 p-button p-component"
+                [disabled]="registrationForm.invalid" (click)="handleSubmit()"
+        ><span
+          class="p-button-icon p-button-icon-left pi pi-fw pi-check" aria-hidden="true"></span><span
+          class="p-button-label">Enregistrer</span><span class="p-ink"></span></button>
+  
+        <button  pbutton="" pripple="" label="Annuler" (click)="close()"
+                 icon="pi pi-times" mat-dialog-close
+                 class="p-element p-ripple p-button-danger flex-1 p-button-outlined p-button p-component"><span
+          class="p-button-icon p-button-icon-left pi pi-times" aria-hidden="true"></span><span
+          class="p-button-label">Annuler</span><span class="p-ink"></span></button>
+      </div>
+    </ng-template>
+  </p-dialog>
+  
+
+
+<!-- <div class="card">
+  <div class="container">
+    <div class=""><h3> Formulaire Agent</h3></div>
+    <form [formGroup]="registrationForm">
+      <div class="form first">
+          <div class="details personnal">
+              <hr>
+              <div class="fields">
+                  <div class="input-field">
+                      <label>Nom Prenom</label>
+                      <input class="form-control" type="text" formControlName="nomprenom" 
+                      placeholder="Entrez le nom et le prenom de l'agent" required>
+                      <app-form-validations [entityField]="'nomprenom'" 
+                      [formGroup]="registrationForm"></app-form-validations> 
+                  </div>
+                 
+                  <div class="input-field">
+                      <label>Genre</label>
+                      <input type="text" formControlName="genre"
+                       placeholder="Choisir le genre de l'agent"
+                       class="form-control"
+                       list="genreList" required> 
+                      <datalist id="genreList">
+                          <option>Homme</option>
+                          <option>Femme</option>
+                      </datalist>
+                      <app-form-validations [entityField]="'genre'" [formGroup]="registrationForm"></app-form-validations>
+                  </div>
+                  
+                  <div class="input-field">
+                      <label>Matricule</label>
+                      <input type="text" formControlName="matricule" 
+                      class="form-control"
+                      placeholder="Entrez le matricule de l'agent" required>
+                      
+                      <app-form-validations [entityField]="'matricule'" 
+                      [formGroup]="registrationForm"></app-form-validations> 
+                  </div>
+                  <div class="input-field">
+                      <label>Unite</label>
+                      <input type="text" formControlName="unite"
+                      class="form-control"
+                      placeholder="Entrez l'unite' de l'agent" required>
+                      <app-form-validations [entityField]="'unite'"
+                       [formGroup]="registrationForm"></app-form-validations> 
+                  </div>
+                  <div class="input-field">
+                      <label>Emploi</label>
+                      <input type="text" formControlName="emploi"
+                      class="form-control"
+                      placeholder="Entrez l'emploi' de l'agent" required>
+                      <app-form-validations [entityField]="'emploi'" [formGroup]="registrationForm"></app-form-validations> 
+                  </div>
+                  <div class="input-field">
+                      <label>Fonction</label>
+                      <input type="text" formControlName="fonction" 
+                      class="form-control"
+                      placeholder="Entrez la fonction de l'agent" required>
+                      <app-form-validations [entityField]="'fonction'" [formGroup]="registrationForm"></app-form-validations> 
+                  </div>
+                  <div class="input-field">
+                      <label>Categorie</label>
+                       <select formControlName="categorie" class="form-control">
+                          
+                          <option>C02</option>
+                          <option>C03</option>
+                          <option>C04</option>
+                          <option>C05</option>
+                          <option>C06</option>
+                          <option>C07</option>
+                          <option>C08</option>
+                          <option>C09</option>
+                          <option>CXX</option>
+                      </select>
+                      <app-form-validations [entityField]="'categorie'" [formGroup]="registrationForm"></app-form-validations>
+                  </div>
+                  <div class="input-field">
+                      <label>Echelon</label>
+                      <input type="text" formControlName="echelon"
+                      class="form-control"
+                      placeholder="combo" required> 
+                      <app-form-validations [entityField]="'echelon'" [formGroup]="registrationForm"></app-form-validations>
+                  </div>
+                  <div class="input-field">
+                      <label>Date Entre Service</label>
+                      <input type="date" formControlName="dateEntreServ" class="form-control">
+                      <app-form-validations [entityField]="'dateEntreServ'" [formGroup]="registrationForm"></app-form-validations> 
+                  </div>
+                  <div class="input-field">
+                      <label>Date Sortie Service</label>
+                      <input type="date" formControlName="dateSortieServ" class="form-control">
+                      <app-form-validations [entityField]="'dateSortieServ'" [formGroup]="registrationForm"></app-form-validations> 
+                  </div>
+              </div>
+              <hr>
+              
+
+              <div  class="flex justify-content-between gap-3">
+
+                <button  pbutton="" pripple="" label="Enregistrer" icon="pi pi-fw pi-check"
+                        class="p-element p-ripple p-button-outlined p-button-success flex-1 p-button p-component"
+                        [disabled]="registrationForm.invalid"
+                        (click)="handleSubmit()"
+                        ><span
+                  class="p-button-icon p-button-icon-left pi pi-fw pi-check" aria-hidden="true"></span><span
+                  class="p-button-label">Enregistrer</span><span class="p-ink"></span></button>
+
+                  <button  pbutton="" pripple="" label="Annuler" 
+                         matDialogClose icon="pi pi-times"
+                          class="p-element p-ripple p-button-danger flex-1 p-button-outlined p-button p-component"><span
+                    class="p-button-icon p-button-icon-left pi pi-times" aria-hidden="true"></span><span
+                    class="p-button-label">Annuler</span><span class="p-ink"></span></button>
+              </div>
+          
+          </div>
+      </div>
+  </form>  </div>
+</div> -->

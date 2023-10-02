@@ -1,0 +1,65 @@
+<div class="container">
+    <div class="card">
+      <form>
+        <div class="form first">
+          <div class="details personnal">
+            <div class="fields grid formgrid">
+              <div class="input-field col-12 field mb-6">
+                <label>Formation</label><br>
+                <p-dropdown  class="w-full"
+                 [options]="dataSource"  
+                            optionLabel="titre" 
+                            [filter]="true" 
+                            filterBy="titre" 
+                            [showClear]="true" 
+                            placeholder="Selectionner une Formation">
+                 </p-dropdown>
+              </div>
+              <div class="input-field col-12 lg:col-6 field mb-4">
+                <label>Coût Unitaire</label>
+                <input type="text"
+                       class="form-control p-inputtext w-full mb-4" placeholder="" required>
+              </div>
+              <div class="input-field col-12 lg:col-6 field mb-4">
+                <label>Quantité</label>
+                <input type="text" class="input form-control p-inputtext w-full mb-4"
+                       placeholder="" required>
+  
+              </div>
+              <div class="input-field col-12 lg:col-6 field mb-4">
+                <label>Nre. Participant</label>
+                <input type="text" class="input form-control p-inputtext w-full mb-4"
+                       placeholder="" required>
+              </div>
+              <div class="input-field col-12 lg:col-6 field mb-4">
+                <label>Montant</label>
+                <input type="text" class="input form-control p-inputtext w-full mb-4"
+                       placeholder="Montant" required>
+              </div>
+            </div>
+            <div class="input-field col-12 field mb-6">
+              <label>Service Budgetaire</label>
+              <select class="form-control p-inputtext w-full mb-4" required>
+                <optGroup label="Directions">
+                  <option>DSI</option>
+                </optGroup>
+                <optGroup label="Departements">
+                  <option>DPP</option>
+                </optGroup>
+              </select>
+            </div>
+            <hr>
+            <div  class="flex justify-content-between gap-3">
+  
+              <button  pbutton="" pripple="" label="Enregistrer" icon="pi pi-fw pi-check"
+                       class="p-element p-ripple p-button-outlined p-button-success flex-1 p-button p-component"
+              ><span
+                class="p-button-icon p-button-icon-left pi pi-fw pi-check" aria-hidden="true"></span><span
+                class="p-button-label">Suivant</span><span class="p-ink"></span></button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  

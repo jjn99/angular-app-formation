@@ -1,0 +1,115 @@
+<p-toast></p-toast>
+<div class="container">
+    <hr>
+    <span class="text-xl font-bold text-align-center">Formulaire Formation</span>
+    <hr>
+    <div class="card">
+        <form [formGroup]="registrationForm">
+            <div class="form first">
+              <div class="details personnal">
+                <div class="fields grid formgrid">
+                  <div class="input-field col-12 lg:col-6 field mb-4">
+                    <label>Date des plans de formation</label>
+                    <input type="text" formControlName="datePlan"
+                           class="form-control p-inputtext w-full mb-4" 
+                           placeholder="Ex: 2021-2022" required>
+                           <app-valid-forma [entityField]="'datePlan'" [formGroup]="registrationForm"></app-valid-forma>
+                  </div>
+                  <div class="input-field col-12 lg:col-6 field mb-4">
+                    <label class="label">Titre</label>
+                    <input type="text" class="input form-control p-inputtext w-full mb-4"
+                           placeholder="" formControlName="titre" required>
+                           <app-valid-forma [entityField]="'titre'" [formGroup]="registrationForm"></app-valid-forma>
+                 
+                  </div>
+                  <div class="input-field col-12 lg:col-6 field mb-4">
+                    <label class="label">Pays</label>
+                    <input type="text" class="input form-control p-inputtext w-full mb-4"
+                           placeholder="" formControlName="pays" required>
+                           <app-valid-forma [entityField]="'pays'" [formGroup]="registrationForm"></app-valid-forma>
+                 
+                  </div>
+                  <div class="input-field col-12 lg:col-6 field mb-4">
+                    <label class="label">Ville</label>
+                    <input type="text" class="input form-control p-inputtext w-full mb-4"
+                           placeholder="" formControlName="ville" required>
+                           <app-valid-forma [entityField]="'ville'" [formGroup]="registrationForm"></app-valid-forma>
+                 
+                  </div>
+        
+                  <div class="input-field col-12 field mb-6">
+                    <label>Cituation Geographique</label>
+                    <select class="form-control p-inputtext w-full mb-4" formControlName="zone" required>
+                      <option>Zone Interieur du Pays</option>
+                      <option>Zone Pays Frontaliers</option>
+                      <option>Zone Afrique</option>
+                      <option>Zone Arique du Sud</option>
+                      <option>Zone Europe </option>
+                      <option>Zone Magreb</option>
+                      <option >Zone Asie</option>
+                      <option>Zone Amerique</option>
+                    </select>
+                  </div>
+        
+                  <div class="input-field col-12 field mb-6">
+                    <label class="label">Objectif</label>
+                    <textarea [autoResize]="true" formControlName="objectif" 
+                    class="form-control w-full" pInputTextarea ></textarea>
+                  </div>
+        
+                  <div class="input-field col-12 lg:col-6 field mb-4">
+                    <label class="label">Type</label>
+                    <select  class="form-control p-inputtext w-full mb-4" 
+                    formControlName="type" required>
+                      <option value="Métier">Métier</option>
+                      <option value="Support">Support</option>
+                    </select>
+                  </div>
+                  <div class="input-field col-12 lg:col-6 field mb-4">
+                    <label class="label">Categorie</label>
+                    <select  class="form-control p-inputtext w-full mb-4" 
+                    formControlName="categorieFormation" required>
+                      <option value="Récyclage">Récyclage</option>
+                      <option value="Perfectionnement">Perfectionnement</option>
+                      <option value="Adaptation au poste de travail/intégration">Adaptation au poste de travail/intégration</option>
+                      <option value="Plan d'action">Plan d'action</option>
+                      <option value=" Récette usine"> Récette usine</option>
+                      <option value="Marché: formation sur un équipement spécifique">Marché: formation sur un équipement spécifique </option>
+                      <option value="Support">Support</option>
+                    </select>
+                  </div>
+                  <div class="input-field col-12 field mb-6">
+                    <label class="label">Organisme</label>
+                    <select  class="form-control p-inputtext w-full mb-4" 
+                    formControlName="idOrganisme" required>
+                      <option *ngFor="let organisme of organismes" 
+                      [value]="organisme?.idOrganisme">{{organisme?.nom}}  ({{organisme?.domaine}})</option>
+            
+                    </select>
+                  </div>
+                </div>
+                
+                <hr>
+                <div  class="flex justify-content-between gap-3">
+  
+                    <button pbutton="" pripple="" label="Enregistrer" icon="pi pi-fw pi-check"
+                            class="p-element p-ripple p-button-outlined p-button-success flex-1 p-button p-component"
+                            [disabled]="registrationForm.invalid" (click)="edit()"
+                    ><span
+                      class="p-button-icon p-button-icon-left pi pi-fw pi-check" aria-hidden="true"></span><span
+                      class="p-button-label">Enregistrer</span><span class="p-ink"></span></button>
+              
+                    <button  pbutton="" pripple="" label="Annuler"
+                             icon="pi pi-times" mat-dialog-close
+                             class="p-element p-ripple p-button-danger flex-1 p-button-outlined p-button p-component"><span
+                      class="p-button-icon p-button-icon-left pi pi-times" aria-hidden="true"></span><span
+                      class="p-button-label">Annuler</span><span class="p-ink"></span></button>
+                  </div>
+              </div>
+            </div>
+          </form>
+    </div>
+  </div>
+  
+
+

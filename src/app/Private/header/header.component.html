@@ -1,0 +1,70 @@
+<div class="head" [ngClass]="getHeadClass()">
+  <div class="head-content">
+    <div class="head-content-left">
+    </div>
+    <div class="head-content-right">
+      <div class="head-user-avatar-container">
+        <div class="head-user-avatar">
+          <!--<i class="pi pi-user menu-icon" [matMenuTriggerFor]="beforeMenu"></i>-->
+          <li class="nav-item dropdown ">
+            <a class="nav-link dropdown-toggle text-primary " role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="pi pi-user menu-icon"></i>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li class="text-center font-bold text-sm text-overflow-ellipsis capitalize">{{username}}</li>
+                <hr class="dropdown-divider">
+                <li><a class="dropdown-item" > <i class="bi bi-person mr-1"></i> Compte</a>
+                </li>
+                <li><a class="dropdown-item" > <i class="bi bi-question-circle mr-1"></i> Centre
+                  d'aide</a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" > <i class="bi bi-box-arrow-left mr-1"></i> Se
+                  déconnecter</a></li>
+              </ul>
+            </a>
+          </li>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--<mat-menu #beforeMenu="matMenu" xPosition="before">
+  <ng-template matMenuContent>
+    <mat-card >
+      <mat-card-header>
+        {{username}}
+      </mat-card-header>
+      <hr>
+      <button mat-menu-item class="" (click)="changePassword()">  Modifier Mot de passe</button>
+    <hr>
+    <button mat-menu-item class="" (click)="logout()">  Se Deconnecter</button>
+
+    </mat-card>
+  </ng-template>
+</mat-menu>-->
+<!--<div class="head" [ngClass]="getHeadClass()">
+
+  <nav class="navbar navbar-expand-lg fixed-top" appNavBackgroundOnScroll>
+    <ul class="navbar_nav2 ms-auto">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle text-primary" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <p-avatar icon="pi pi-user" styleClass="mr-2"></p-avatar>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li class="text-center font-bold text-sm text-overflow-ellipsis capitalize">Username</li>
+            <li><a class="dropdown-item" > <i class="bi bi-person mr-1"></i> Compte</a>
+            </li>
+            <li><a class="dropdown-item"> <i class="bi bi-question-circle mr-1"></i> Centre
+              d'aide</a></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item" > <i class="bi bi-box-arrow-left mr-1"></i> Se
+              déconnecter</a></li>
+          </ul>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>-->

@@ -1,0 +1,182 @@
+<div class="col-12 mt-3 h-20rem border-1 surface-border w-full bg-cover border-round mb-6">
+  <img src="">
+</div>
+<div class="grid card grid-nogutter">
+  <div class="container">
+    <div class="title"><header>STAGE</header></div>
+    <div class="title"><header> Demande de stage</header></div>
+    <form [formGroup]="registrationForm">
+      <div class="form first">
+        <div class="details personnal">
+          <hr>
+          <span class="title1">Informations du postulant</span>
+          <div class="fields grid formgrid">
+            <div class="input-field col-12 lg:col-6 field mb-4">
+              <label>Nom</label>
+              <input type="text" class="form-control p-inputtext w-full mb-4"
+               formControlName="nom" placeholder="" required>
+               <app-public-form-validations [entityField]="'nom'" [formGroup]="registrationForm">
+
+               </app-public-form-validations>
+            </div>
+
+            <div class="input-field col-12 lg:col-6 field mb-4">
+              <label>Prenom</label>
+              <input type="text" class="form-control p-inputtext w-full mb-4"
+               formControlName="prenom" placeholder="" required>
+               <app-public-form-validations [entityField]="'prenom'" [formGroup]="registrationForm">
+
+               </app-public-form-validations>
+            </div>
+
+            <div class="input-field col-12 lg:col-6 field mb-4">
+              <label>Genre</label>
+              <select class="form-control p-inputtext w-full mb-4" formControlName="genre">
+                <option>Femme</option>
+                <option>Homme</option>
+              </select>
+              <app-public-form-validations [entityField]="'genre'" [formGroup]="registrationForm">
+
+              </app-public-form-validations>
+            </div>
+
+            <div class="input-field col-12 lg:col-6 field mb-4">
+              <label>Age</label>
+              <input type="number" class="form-control p-inputtext w-full mb-4"
+               formControlName="age" placeholder="" required>
+               <app-public-form-validations [entityField]="'age'" [formGroup]="registrationForm">
+
+               </app-public-form-validations>
+            </div>
+            <div class="input-field col-12 lg:col-6 field mb-4">
+              <label>Email</label>
+              <input type="email" formControlName="mail"
+               class="form-control p-inputtext w-full mb-4" required>
+               <app-public-form-validations [entityField]="'mail'" [formGroup]="registrationForm">
+
+               </app-public-form-validations>
+            </div>
+            <div class="input-field col-12 lg:col-6 field mb-4">
+              <label>Numero CNIB</label>
+              <input type="text" formControlName="cnib" 
+              class="form-control p-inputtext w-full mb-4" required>
+              <app-public-form-validations [entityField]="'cnib'" [formGroup]="registrationForm">
+
+              </app-public-form-validations>
+            </div>
+            <div class="input-field col-12 lg:col-6 field mb-4">
+              <label>Numero de telephone</label>
+              <input type="text" formControlName="phone" 
+              class="form-control p-inputtext w-full mb-4" required>
+              <app-public-form-validations [entityField]="'phone'" [formGroup]="registrationForm">
+
+              </app-public-form-validations>
+            </div>
+            <div class="input-field col-12 lg:col-6 field mb-4">
+              <label>Niveau</label>
+              <select class="form-control p-inputtext w-full mb-4" formControlName="niveau">
+                <option>-</option>
+                <option>BAC</option>
+                <option>BAC+1</option>
+                <option>BAC+2</option>
+                <option>BAC+3</option>
+                <option>BAC+4</option>
+                <option>BAC+5</option>
+                <option>BAC+6</option>
+                <option>DOCTORAT</option>
+              </select>
+              
+            <app-public-form-validations [entityField]="'niveau'" [formGroup]="registrationForm">
+
+            </app-public-form-validations>
+            </div>
+            <div class="input-field col-12 lg:col-6 field mb-4">
+              <label>Diplome</label>
+              <input type="text" formControlName="diplome"
+               class="form-control p-inputtext w-full mb-4" required>
+               <app-public-form-validations [entityField]="'diplome'" [formGroup]="registrationForm">
+
+               </app-public-form-validations>
+            </div>
+
+            <div class="input-field col-12 lg:col-6 field mb-4">
+              <label>Ville Residence</label>
+              <input type="text" formControlName="ville" 
+              class="form-control p-inputtext w-full mb-4" required>
+              <app-public-form-validations [entityField]="'ville'" [formGroup]="registrationForm">
+
+              </app-public-form-validations>
+            </div>
+
+          </div>
+        </div>
+        <div class="details personnal">
+          <hr>
+          <span class="title1">Informations Stage</span>
+          <div class="fields grid formgrid">
+            <div class="input-field col-12 lg:col-6 field mb-4">
+              <label>Objet</label>
+              <input type="text" formControlName="objet" 
+              class="form-control p-inputtext w-full mb-4" placeholder="Ex: Stage en Informatique">
+              <app-public-form-validations [entityField]="'objet'" [formGroup]="registrationForm">
+
+              </app-public-form-validations>
+            </div>
+            <div class="input-field col-12 lg:col-6 field mb-4">
+              <label>Ecole/Université</label>
+              <input type="text" formControlName="ecole" 
+              class="form-control p-inputtext w-full mb-4" placeholder="Ex:UNIVERSITE NORBERT ZONGO">
+              <app-public-form-validations [entityField]="'ecole'" [formGroup]="registrationForm">
+
+              </app-public-form-validations>
+            </div>
+            <div class="input-field col-12 lg:col-6 field mb-4">
+              <label>Date Debut</label>
+              <input type="month" class="form-control p-inputtext w-full mb-4" 
+               formControlName="dateDebut">
+               <app-public-form-validations [entityField]="'dateDebut'" [formGroup]="registrationForm">
+
+               </app-public-form-validations>
+            </div>
+            <div class="input-field col-12 lg:col-6 field mb-4">
+              <label>Date Fin</label>
+              <input type="month" class="form-control p-inputtext w-full mb-4"
+               formControlName="dateFin">
+               <app-public-form-validations [entityField]="'dateFin'" [formGroup]="registrationForm">
+
+               </app-public-form-validations>
+            </div>
+          </div>
+        </div>
+    <!--    <p-fileUpload (onUpload)="onUpload($event)" [multiple]="true" accept="application/pdf">
+          <ng-template pTemplate="content">
+            <ul *ngIf="uploadedFiles.length">
+              <li *ngFor="let file of uploadedFiles">{{ file.name }} - {{ file.size }} bytes</li>
+            </ul>
+          </ng-template>
+        </p-fileUpload>-->
+        <!--<div class="details personnal">
+          <div class="wrapper">
+            <header>Pièces jointes</header>
+            <form action="#">
+              <input class="file-input" type="file" accept="application/pdf" name="file" hidden>
+              <i class="fas fa-cloud-upload-alt"></i>
+              <p>Parcourir le fichier à télécharger</p>
+            </form>
+            <section class="progress-area"></section>
+            <section class="uploaded-area"></section>
+          </div>
+        </div>-->
+
+
+
+        <div class="button-container">
+          <button class="btn btn btn-success " [disabled]="registrationForm.invalid" (click)="handleSubmit()"
+                  > Enregistrer</button>
+                  
+        </div>
+
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,50 @@
+mat-card{
+  background-color: rgb(230, 230, 230);
+  color:black;
+  border: 2px 2px 2px 2px;
+  margin: 15px;
+}
+table{
+  width:100%;
+}
+.card-bodt{
+  position: relative;
+  overflow: auto;
+}/*
+table th, table td{
+  padding:15px;
+  border: 1px solid black;
+  text-align:center;
+}
+table th{
+  background: #5A7987;
+  color: white;
+}*/
+.icon{
+  font-size: 24px;
+}
+.status{
+  padding: 2px 4px;
+  color: white;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+}
+.container-row button{
+  margin:5px;
+}
+
+.Terminer{
+  background: #FFCDD2;
+  color:#C63737;
+}
+
+.Debuter{
+  background: #C8E6C9;
+  color: #256029;
+}
+
+.nonDebuter{
+  background: #bebbbd;
+  color: #161616;
+}

@@ -1,0 +1,67 @@
+<p-toast></p-toast>
+<div class="card">
+    <div class="container">
+        <div class=""><h3 class="text-center"> Formulaire Organisme</h3></div>
+        <form [formGroup]="registrationForm">
+        <div class="form first">
+            <div class="details personnal">
+                <hr>
+                <div class="fields">
+                    <div class="input-field">
+                        <label>Nom</label>
+                        <input type="text" formControlName="nom" class="form-control"
+                        placeholder="Entrez le nom" required> 
+                        <app-valid-forma [entityField]="'nom'"
+                        [formGroup]="registrationForm"></app-valid-forma>
+                        
+                    </div>
+                    <div class="input-field">
+                        <label>Domaine</label>
+                        <input type="text" formControlName="domaine" class="form-control"
+                        placeholder="Entrez le domaine d'activité" required> 
+                        <app-valid-forma [entityField]="'domaine'"
+                        [formGroup]="registrationForm"></app-valid-forma>
+                    </div>
+                    
+                    <div class="input-field">
+                        <label>Contact</label>
+                        <input type="text" formControlName="contact" class="form-control"
+                        placeholder="Entrez le contact" required> 
+                        <app-valid-forma [entityField]="'contact'"
+                        [formGroup]="registrationForm"></app-valid-forma>
+                    </div>
+
+                    <div class="input-field">
+                        <label>Lieu</label>
+                        <input type="text" formControlName="lieu" class="form-control"
+                        placeholder="Ex: Pays/Ville" required> 
+                        
+              <app-valid-forma [entityField]="'lieu'"
+              [formGroup]="registrationForm"></app-valid-forma>
+                    </div>
+               
+                </div>
+                <hr>
+                
+              <div  class="flex justify-content-between gap-3">
+
+                <button  pbutton="" pripple="" label="Enregistrer" icon="pi pi-fw pi-check"
+                        class="p-element p-ripple p-button-outlined p-button-success flex-1 p-button p-component"
+                        [disabled]="registrationForm.invalid"
+                        (click)="handleSubmit()"
+                        ><span
+                  class="p-button-icon p-button-icon-left pi pi-fw pi-check" aria-hidden="true"></span><span
+                  class="p-button-label">Enregistrer</span><span class="p-ink"></span></button>
+
+                  <button  pbutton="" pripple="" label="Annuler" 
+                         matDialogClose icon="pi pi-times"
+                          class="p-element p-ripple p-button-danger flex-1 p-button-outlined p-button p-component"><span
+                    class="p-button-icon p-button-icon-left pi pi-times" aria-hidden="true"></span><span
+                    class="p-button-label">Annuler</span><span class="p-ink"></span></button>
+              </div>
+            
+            </div>
+        </div>
+        </form>
+    </div>
+</div>

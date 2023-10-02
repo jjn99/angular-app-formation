@@ -1,0 +1,39 @@
+mat-card{
+  background-color: rgb(230, 230, 230);
+  color: black;
+  border: 2px 2px 2px 2px;
+}
+table{
+  max-width:100%;
+}
+/*able th, table td{
+  padding:15px;
+  border: 1px solid black;
+  text-align:center;
+}*/
+/*table th{
+  background: #5A7987;
+  color: white;
+}*/
+.iconTab{
+  font-size: 24px;
+  width: 2rem;
+  min-width: 2rem;
+  align-items: center;
+}
+.status{
+  padding: 2px 2px;
+  color: white;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+}
+.retraite{
+  background: #FFCDD2;
+  color:#C63737;
+}
+
+.activite{
+  background: #C8E6C9;
+  color: #256029;
+}

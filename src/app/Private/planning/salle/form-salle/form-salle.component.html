@@ -1,0 +1,174 @@
+
+<p-dialog header="Header" [(visible)]="visible" [closable]="false" [modal]="true" [style]="{ width: '800px' }"
+          [draggable]="false" [resizable]="false">
+  <ng-template pTemplate="header">
+    <span class="text-xl font-bold">Formulaire Salle</span>
+  </ng-template>
+  <form [formGroup]="registrationForm">
+    <div class="form first">
+      <div class="details personnal">
+        <hr>
+        <div class="fields grid formgrid">
+          <div class="input-field col-12 mb-2 lg:col-4 lg:mb-0">
+            <label>Nom</label>
+            <input type="text" formControlName="nom"
+                   class="form-control" required>
+            <app-valid-planning [entityField]="'nom'" [formGroup]="registrationForm"></app-valid-planning>
+          </div>
+          <div class="input-field col-12 mb-2 lg:col-4 lg:mb-0">
+            <label>Nombre de place</label>
+            <input type="number" formControlName="nbrPlace"
+                   class="form-control" required>
+            <app-valid-planning [entityField]="'nbrPlace'" [formGroup]="registrationForm"></app-valid-planning>
+          </div>
+        </div>
+        <div class="fields grid formgrid">
+          <div class="input-field w-full">
+
+            <label>Description</label>
+            <textarea rows="3" formControlName="description"
+                      class="form-control w-full mr-2" pInputTextarea ></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+  <ng-template pTemplate="footer">
+    <div  class="flex justify-content-between gap-3">
+
+      <button pbutton="" pripple="" label="Enregistrer" icon="pi pi-fw pi-check"
+              class="p-element p-ripple p-button-outlined p-button-success flex-1 p-button p-component"
+              [disabled]="registrationForm.invalid" (click)="handleSubmit()"
+      ><span
+        class="p-button-icon p-button-icon-left pi pi-fw pi-check" aria-hidden="true"></span><span
+        class="p-button-label">Enregistrer</span><span class="p-ink"></span></button>
+
+      <button  pbutton="" pripple="" label="Annuler"
+               (click)="close()" icon="pi pi-times" mat-dialog-close
+               class="p-element p-ripple p-button-danger flex-1 p-button-outlined p-button p-component"><span
+        class="p-button-icon p-button-icon-left pi pi-times" aria-hidden="true"></span><span
+        class="p-button-label">Annuler</span><span class="p-ink"></span></button>
+    </div>
+  </ng-template>
+</p-dialog>
+
+<!--
+<p-toast></p-toast>
+<div class="card">
+  <div class="container">
+    <div class="title"><header> Formulaire Salle</header></div>
+    <form [formGroup]="registrationForm">
+      <div class="form first">
+        <div class="details personnal">
+          <hr>
+          <div class="fields">
+            <div class="input-field">
+              <label>Nom</label>
+              <input type="text" formControlName="nom"
+              class="form-control" placeholder="Entrez le nom" required> 
+              <app-valid-planning [entityField]="'nom'" [formGroup]="registrationForm"></app-valid-planning>
+                
+          </div>
+          <div class="input-field">
+              <label>nombre de place</label>
+              <input type="number" formControlName="nbrPlace"
+              class="form-control" placeholder="Entrez le nombre de place" required> 
+              <app-valid-planning [entityField]="'nbrPlace'" [formGroup]="registrationForm"></app-valid-planning>
+            </div>
+          </div>
+          <div class="fields1">
+            <div class="input-field">
+              <label>Description</label>
+              <textarea rows="3" formControlName="descripion"
+               placeholder="Entrez la description" cols="95"
+               class="form-control" pInputTextarea ></textarea>
+               <app-valid-planning [entityField]="'description'"
+               [formGroup]="registrationForm"></app-valid-planning>
+              </div>
+          </div>
+          <hr>
+
+          <div  class="flex justify-content-between gap-3">
+
+            <button  pbutton="" pripple="" label="Enregistrer" icon="pi pi-fw pi-check"
+                    class="p-element p-ripple p-button-outlined p-button-success flex-1 p-button p-component"
+                    [disabled]="registrationForm.invalid"
+                    (click)="handleSubmit()"
+                    ><span
+              class="p-button-icon p-button-icon-left pi pi-fw pi-check" aria-hidden="true"></span><span
+              class="p-button-label">Enregistrer</span><span class="p-ink"></span></button>
+
+              <button  pbutton="" pripple="" label="Annuler" 
+                     matDialogClose icon="pi pi-times"
+                      class="p-element p-ripple p-button-danger flex-1 p-button-outlined p-button p-component"><span
+                class="p-button-icon p-button-icon-left pi pi-times" aria-hidden="true"></span><span
+                class="p-button-label">Annuler</span><span class="p-ink"></span></button>
+          </div>
+
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+-->
+
+
+
+<!-- <p-toast></p-toast>
+<div class="card">
+  <div class="container">
+    <div class="title"><header> Formulaire Salle</header></div>
+    <form [formGroup]="registrationForm">
+      <div class="form first">
+        <div class="details personnal">
+          <hr>
+          <div class="fields">
+            <div class="input-field">
+              <label>Nom</label>
+              <input type="text" formControlName="nom"
+              class="form-control" placeholder="Entrez le nom" required> 
+              <app-valid-planning [entityField]="'nom'" [formGroup]="registrationForm"></app-valid-planning>
+                
+          </div>
+          <div class="input-field">
+              <label>nombre de place</label>
+              <input type="number" formControlName="nbrPlace"
+              class="form-control" placeholder="Entrez le nombre de place" required> 
+              <app-valid-planning [entityField]="'nbrPlace'" [formGroup]="registrationForm"></app-valid-planning>
+            </div>
+          </div>
+          <div class="fields1">
+            <div class="input-field">
+              <label>Description</label>
+              <textarea rows="3" formControlName="descripion"
+               placeholder="Entrez la description" cols="95"
+               class="form-control" pInputTextarea ></textarea>
+               <app-valid-planning [entityField]="'description'"
+               [formGroup]="registrationForm"></app-valid-planning>
+              </div>
+          </div>
+          <hr>
+
+          <div  class="flex justify-content-between gap-3">
+
+            <button  pbutton="" pripple="" label="Enregistrer" icon="pi pi-fw pi-check"
+                    class="p-element p-ripple p-button-outlined p-button-success flex-1 p-button p-component"
+                    [disabled]="registrationForm.invalid"
+                    (click)="handleSubmit()"
+                    ><span
+              class="p-button-icon p-button-icon-left pi pi-fw pi-check" aria-hidden="true"></span><span
+              class="p-button-label">Enregistrer</span><span class="p-ink"></span></button>
+
+              <button  pbutton="" pripple="" label="Annuler" 
+                     matDialogClose icon="pi pi-times"
+                      class="p-element p-ripple p-button-danger flex-1 p-button-outlined p-button p-component"><span
+                class="p-button-icon p-button-icon-left pi pi-times" aria-hidden="true"></span><span
+                class="p-button-label">Annuler</span><span class="p-ink"></span></button>
+          </div>
+
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+ -->

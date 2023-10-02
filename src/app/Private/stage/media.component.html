@@ -1,0 +1,88 @@
+<p-toolbar>
+  <ng-template pTemplate="left">
+    <p-button label="Ajouter" icon="pi pi-plus" (click)="handleAddAction()" class="mr-2"></p-button>
+  </ng-template>
+  <ng-template>
+   <div class="my-2">
+     <h4>Demandes</h4>
+   </div>
+  </ng-template>
+</p-toolbar>
+<hr>
+<div class="card">
+  <div class="input-group">
+    <label class="input-group-text">Filtrer</label>
+    <input type="text" class="form-control" (keyup)="applyFilter($event)" width="550px">
+  </div>
+  <hr>
+  <!-- 
+  <div class="card-header">Liste des Demandes</div>
+  <hr> -->
+  <div class="card-bodt">
+     <table mat-table  [dataSource]="dataSource" matSort >
+
+          <ng-container matColumnDef="nomPrenom"> 
+              <th  mat-sort-header="" mat-header-cell *matHeaderCellDef >Nom Prenom</th>
+              <td  mat-cell *matCellDef="let element"> {{element?.postulant?.nom}}
+                 {{element?.postulant?.prenom}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="objet"> 
+              <th  mat-sort-header="" mat-header-cell *matHeaderCellDef>Objet</th>
+              <td  mat-cell *matCellDef="let element"> {{element?.objet}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="niveau"> 
+              <th  mat-header-cell *matHeaderCellDef>Diplome</th>
+              <td  mat-cell *matCellDef="let element"> {{element?.postulant?.diplome}}
+                 ({{element?.postulant?.niveau}}) </td>
+          </ng-container>
+
+          <ng-container matColumnDef="dateDebut"> 
+              <th  mat-header-cell *matHeaderCellDef>Date Probable</th>
+              <td  mat-cell *matCellDef="let element"> {{element?.dateDebut}}/{{element?.dateFin}} </td>
+          </ng-container>
+          <ng-container matColumnDef="mail"> 
+              <th  mat-header-cell *matHeaderCellDef>Email</th>
+              <td  mat-cell *matCellDef="let element"> {{element?.postulant?.mail}} </td>
+          </ng-container>
+          
+          <ng-container matColumnDef="statut"> 
+              <th  mat-sort-header="" mat-header-cell *matHeaderCellDef>Statut</th>
+              <td  mat-cell *matCellDef="let element">
+                <div class="row">
+                  <div class="col"> <spam class="status" [ngClass]="getClass(element?.statut)">{{element?.statut}}</spam></div>
+              </div> 
+              </td>
+          </ng-container>
+
+          <ng-container matColumnDef="action"> 
+              <th  mat-header-cell *matHeaderCellDef>Action</th>
+              <td  mat-cell *matCellDef="let element">
+                    <div class="flex">
+                <button pButton type="button" pTooltip="Accorder" 
+                icon="bi bi-check-lg" class="p-button-rounded p-button-success mx-2" 
+                *ngIf="element.statut === 'Non-Traiter'" iconPos="left"
+                tooltipPosition="top" pRipple (click)="handleAccorder(element)">
+              </button>
+              <button pButton type="button" pTooltip="Rejeter" 
+              icon="bi bi-x-lg" class="p-button-rounded p-button-danger mx-2"
+              *ngIf="element.statut === 'Non-Traiter'" iconPos="left"
+              tooltipPosition="top" pRipple (click)="handleRejeter(element)">
+              </button>
+              <button pButton type="button" pTooltip="Renouveller" 
+              icon="bi bi-arrow-counterclockwise" class="p-button-rounded p-button-primary mx-2"
+              *ngIf="element.statut === 'Traiter'" iconPos="left"
+              tooltipPosition="top" pRipple >
+              </button>
+              </div>
+              </td>
+          </ng-container>
+          <tr mat-header-row *matHeaderRowDef="dispayedColumn;sticky:true"></tr>
+          <tr mat-row *matRowDef="let row;columns:dispayedColumn"></tr>
+      </table> 
+      <mat-paginator [pageSizeOptions]="[5,10,20]" showFirstLastButtons ></mat-paginator>
+
+  </div>
+  
+</div>

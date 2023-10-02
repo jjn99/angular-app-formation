@@ -1,0 +1,190 @@
+mat-card-header{
+  font-size:20px;
+}
+.insight{
+  margin-top: 1.4rem;
+  border-radius: 0.4rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.6rem;
+}
+
+.classFormation{
+  align-items: center;
+  height: 6rem;
+  background: white;
+  padding: 1rem;
+  border-radius: 1rem;
+  margin: 1rem;
+  box-shadow: 0 0.5rem gray;
+  transition: all 300ms ease;
+  font-size: 16px;
+  font-family: sans-serif;
+}
+.classFormation .titleFormation{
+  font-size: 18px;
+  font-family: 'Times New Roman', Times, serif;
+}
+.classFormation:hover{
+  box-shadow: 0 0.7rem coral;
+}
+.classFormation span{
+  color: coral;
+  padding: 0.5rem;
+  border-radius: 50%;
+  font-size: 2.5rem;
+}
+
+.classAgent{
+  align-items: center;
+  height: 6rem;
+  background: white;
+  padding: 1rem;
+  border-radius: 1rem;
+  margin: 1rem;
+  box-shadow: 0 0.5rem gray;
+  transition: all 300ms ease;
+  font-size: 16px;
+  font-family: sans-serif;
+}
+.classAgent .titleAgents{
+  font-size: 18px;
+  font-family: 'Times New Roman', Times, serif;
+}
+.classAgent:hover{
+  box-shadow: 0 0.7rem rgb(25, 173, 116);
+}
+.classAgent span{
+  color: rgb(25, 173, 116);
+  padding: 0.5rem;
+  border-radius: 50%;
+  font-size: 2.5rem;
+}
+
+
+.classUser{
+  align-items: center;
+  height: 6rem;
+  background: white;
+  padding: 1rem;
+  border-radius: 1rem;
+  margin: 1rem;
+  box-shadow: 0 0.5rem gray;
+  transition: all 300ms ease;
+  font-size: 16px;
+  font-family: sans-serif;
+}
+.classEntite .titleUser{
+  font-size: 18px;
+  font-family: 'Times New Roman', Times, serif;
+}
+.classUser:hover{
+  box-shadow: 0 0.7rem rgb(238, 8, 39);
+}
+.classUser span{
+  color: rgb(238, 8, 39);
+  padding: 0.5rem;
+  border-radius: 50%;
+  font-size: 2.5rem;
+}
+
+
+.classEntite{
+  align-items: center;
+  height: 6rem;
+  background: white;
+  padding: 1rem;
+  border-radius: 1rem;
+  margin: 1rem;
+  box-shadow: 0 0.5rem gray;
+  transition: all 300ms ease;
+  font-size: 16px;
+  font-family: sans-serif;
+}
+.classEntite .titleEntite{
+  font-size: 18px;
+  font-family: 'Times New Roman', Times, serif;
+}
+.classEntite:hover{
+  box-shadow: 0 0.7rem rgb(245, 107, 238);
+}
+.classEntite span{
+  color: rgb(245, 107, 238);
+  padding: 0.5rem;
+  border-radius: 50%;
+  font-size: 2.5rem;
+}
+
+
+.classOrga{
+  align-items: center;
+  height: 6rem;
+  background: white;
+  padding: 1rem;
+  border-radius: 1rem;
+  margin: 1rem;
+  box-shadow: 0 0.5rem gray;
+  transition: all 300ms ease;
+  font-size: 16px;
+  font-family: sans-serif;
+}
+.classOrga .titleOrga{
+  font-size: 18px;
+  font-family: 'Times New Roman', Times, serif;
+}
+.classOrga:hover{
+  box-shadow: 0 0.7rem rgb(118, 42, 240);
+}
+.classOrga span{
+  color: rgb(118, 42, 240);
+  padding: 0.5rem;
+  border-radius: 50%;
+  font-size: 2.5rem;
+}
+
+.class{
+  align-items: center;
+  height: 6rem;
+  background: white;
+  padding: 1rem;
+  border-radius: 1rem;
+  margin: 1rem;
+  box-shadow: 0 0.5rem gray;
+  transition: all 300ms ease;
+  font-size: 16px;
+  font-family: sans-serif;
+}
+.class .title{
+  font-size: 18px;
+  font-family: 'Times New Roman', Times, serif;
+}
+.class:hover{
+  box-shadow: 0 0.7rem rgb(238, 177, 8);
+}
+.class span{
+  color: rgb(238, 177, 8);
+  padding: 0.5rem;
+  border-radius: 50%;
+  font-size: 2.5rem;
+}
+
+
+.salle{
+  height: 10rem;
+  background: white;
+  padding: 1.8rem;
+  border-radius: 2rem;
+  margin: 1rem;
+  box-shadow: 0 0.5rem 1rem;
+  transition: all 300ms ease;
+}
+.salle:hover{
+  box-shadow: 0 0.3rem 0.5rem;
+}
+.salle span{
+  background: rgb(238, 177, 8);
+  padding: 0.5rem;
+  border-radius: 50%;
+  color: white;
+  font-size: 2rem;
+}

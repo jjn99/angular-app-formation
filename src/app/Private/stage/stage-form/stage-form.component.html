@@ -1,0 +1,545 @@
+<!--
+<div class="card">
+  <div class="container">
+    <div class=""><h3 class="text-center"> Formulaire Demande Stage</h3></div>
+    <p-divider></p-divider>
+    <form >
+      <div class="form first">
+        <div class="details personnal">
+          <hr>
+          <span class="title1">Informations du postulant</span>
+          <div class="fields">
+            <div class="input-field">
+              <label>Nom</label>
+              <input type="text" formControlName="nom" placeholder="Entrez votre nom " required>
+            </div>
+
+            <div class="input-field">
+              <label>Prenom</label>
+              <input type="text" formControlName="prenom" placeholder="Entrez votre prenom " required>
+            </div>
+
+            <div class="input-field">
+              <label>Genre</label>
+              <select formControlName="genre">
+                <option>Femme</option>
+                <option>Homme</option>
+              </select>
+            </div>
+
+            <div class="input-field">
+              <label>Age</label>
+              <input type="number" formControlName="age" placeholder="Entrez Votre age" required>
+            </div>
+            <div class="input-field">
+              <label>Email</label>
+              <input type="email" formControlName="mail" placeholder="Entrez votre email " required>
+            </div>
+            <div class="input-field">
+              <label>Ville Residence</label>
+              <input type="text" formControlName="ville" placeholder="Entrez votre ville " required>
+            </div>
+            <div class="input-field">
+              <label>Numero CNIB</label>
+              <input type="text" formControlName="cnib" placeholder="Ex: B19283746" required>
+            </div>
+            <div class="input-field">
+              <label>Numero de telephone</label>
+              <input type="text" formControlName="phone" placeholder="Ex: +226 70 00 00 00" required>
+            </div>
+            <div class="input-field">
+              <label>Niveau</label>
+              <select formControlName="niveau">
+                <option>-</option>
+                <option>BAC</option>
+                <option>BAC+1</option>
+                <option>BAC+2</option>
+                <option>BAC+3</option>
+                <option>BAC+4</option>
+                <option>BAC+5</option>
+                <option>BAC+6</option>
+                <option>DOCTORAT</option>
+              </select>
+            </div>
+            <div class="input-field">
+              <label>Diplome</label>
+              <input type="text" formControlName="diplome" placeholder="Ex: Informatique:Base de données" required>
+            </div>
+          </div>
+        </div>
+        <div class="details personnal">
+          <hr>
+          <span class="title1">Informations Stage</span>
+          <div class="fields">
+            <div class="input-field">
+              <label>Objet</label>
+              <input type="text" formControlName="objet" placeholder="Ex: Stage en Informatique">
+            </div>
+            <div class="input-field">
+              <label>Ecole/Université</label>
+              <input type="text" formControlName="ecole" placeholder="Université Norbert Zongo">
+            </div>
+            <div class="input-field">
+              <label>Date Debut</label>
+              <input type="month"  formControlName="dateDebut">
+            </div>
+            <div class="input-field">
+              <label>Date Fin</label>
+              <input type="month" formControlName="dateFin">
+            </div>
+          </div>
+        </div>
+        <hr>
+        <div class="button-container">
+          <button class="btn btn btn-success bi bi-send" > Enregistrer</button>
+          <button class="btn btn btn-danger bi bi-x-circle-fill" matDialogClose> Annuler</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+-->
+<!--<div class="card">
+  <div class="container">
+    <div mat-dialog-title ><h3> Formulaire Agent</h3></div>
+    <form [formGroup]="registrationForm">
+      <div class="form first">
+          <div class="details personnal">
+              <hr>
+              <div class="fields">
+                  <div class="input-field">
+                      <label>Nom Prenom</label>
+                      <input class="form-control" type="text" formControlName="nomprenom"
+                      placeholder="Entrez le nom et le prenom de l'agent" required>
+                      <app-form-validations [entityField]="'nomprenom'"
+                      [formGroup]="registrationForm"></app-form-validations>
+                  </div>
+
+                  <div class="input-field">
+                      <label>Genre</label>
+                      <input type="text" formControlName="genre"
+                       placeholder="Choisir le genre de l'agent"
+                       class="form-control"
+                       list="genreList" required>
+                      <datalist id="genreList">
+                          <option>Homme</option>
+                          <option>Femme</option>
+                      </datalist>
+                      <app-form-validations [entityField]="'genre'" [formGroup]="registrationForm"></app-form-validations>
+                  </div>
+
+                  <div class="input-field">
+                      <label>Matricule</label>
+                      <input type="text" formControlName="matricule"
+                      class="form-control"
+                      placeholder="Entrez le matricule de l'agent" required>
+
+                      <app-form-validations [entityField]="'matricule'"
+                      [formGroup]="registrationForm"></app-form-validations>
+                  </div>
+                  <div class="input-field">
+                      <label>Unite</label>
+                      <input type="text" formControlName="unite"
+                      class="form-control"
+                      placeholder="Entrez l'unite' de l'agent" required>
+                      <app-form-validations [entityField]="'unite'"
+                       [formGroup]="registrationForm"></app-form-validations>
+                  </div>
+                  <div class="input-field">
+                      <label>Emploi</label>
+                      <input type="text" formControlName="emploi"
+                      class="form-control"
+                      placeholder="Entrez l'emploi' de l'agent" required>
+                      <app-form-validations [entityField]="'emploi'" [formGroup]="registrationForm"></app-form-validations>
+                  </div>
+                  <div class="input-field">
+                      <label>Fonction</label>
+                      <input type="text" formControlName="fonction"
+                      class="form-control"
+                      placeholder="Entrez la fonction de l'agent" required>
+                      <app-form-validations [entityField]="'fonction'" [formGroup]="registrationForm"></app-form-validations>
+                  </div>
+                  <div class="input-field">
+                      <label>Categorie</label>
+                       <select formControlName="categorie" class="form-control">
+
+                          <option>C02</option>
+                          <option>C03</option>
+                          <option>C04</option>
+                          <option>C05</option>
+                          <option>C06</option>
+                          <option>C07</option>
+                          <option>C08</option>
+                          <option>C09</option>
+                          <option>CXX</option>
+                      </select>
+                      <app-form-validations [entityField]="'categorie'" [formGroup]="registrationForm"></app-form-validations>
+                  </div>
+                  <div class="input-field">
+                      <label>Echelon</label>
+                      <input type="text" formControlName="echelon"
+                      class="form-control"
+                      placeholder="combo" required>
+                      <app-form-validations [entityField]="'echelon'" [formGroup]="registrationForm"></app-form-validations>
+                  </div>
+                  <div class="input-field">
+                      <label>Date Entre Service</label>
+                      <input type="date" formControlName="dateEntreServ" class="form-control">
+                      <app-form-validations [entityField]="'dateEntreServ'" [formGroup]="registrationForm"></app-form-validations>
+                  </div>
+                  <div class="input-field">
+                      <label>Date Sortie Service</label>
+                      <input type="date" formControlName="dateSortieServ" class="form-control">
+                      <app-form-validations [entityField]="'dateSortieServ'" [formGroup]="registrationForm"></app-form-validations>
+                  </div>
+              </div>
+              <hr>
+
+
+              <div  class="flex justify-content-between gap-3">
+
+                <button  pbutton="" pripple="" label="Enregistrer" icon="pi pi-fw pi-check"
+                        class="p-element p-ripple p-button-outlined p-button-success flex-1 p-button p-component"
+                        [disabled]="registrationForm.invalid"
+                        (click)="handleSubmit()"
+                        ><span
+                  class="p-button-icon p-button-icon-left pi pi-fw pi-check" aria-hidden="true"></span><span
+                  class="p-button-label">Enregistrer</span><span class="p-ink"></span></button>
+
+                  <button  pbutton="" pripple="" label="Annuler"
+                         matDialogClose icon="pi pi-times"
+                          class="p-element p-ripple p-button-danger flex-1 p-button-outlined p-button p-component"><span
+                    class="p-button-icon p-button-icon-left pi pi-times" aria-hidden="true"></span><span
+                    class="p-button-label">Annuler</span><span class="p-ink"></span></button>
+              </div>
+
+          </div>
+      </div>
+  </form>
+  </div>
+</div>-->
+<!-- <p-dialog header="Header" [(visible)]="visible" [closable]="false" [modal]="true" [style]="{ width: '1000px' }" [draggable]="false" [resizable]="false">
+  <ng-template pTemplate="header">
+    <span class="text-xl font-bold">Formulaire Stage</span>
+  </ng-template>
+
+
+  <form [formGroup]="registrationForm">
+    <div class="form first">
+      <div class="details personnal">
+        <hr>
+        <span class="title1">Informations du postulant</span>
+        <div class="fields grid formgrid">
+          <div class="input-field col-12 lg:col-6 field mb-4">
+            <label>Nom</label>
+            <input type="text" class="form-control p-inputtext w-full mb-4" formControlName="nom" placeholder="" required>
+          </div>
+
+          <div class="input-field col-12 lg:col-6 field mb-4">
+            <label>Prenom</label>
+            <input type="text" class="form-control p-inputtext w-full mb-4" formControlName="prenom" placeholder="" required>
+          </div>
+
+          <div class="input-field col-12 lg:col-6 field mb-4">
+            <label>Genre</label>
+            <select class="form-control p-inputtext w-full mb-4" formControlName="genre">
+              <option>Femme</option>
+              <option>Homme</option>
+            </select>
+          </div>
+
+          <div class="input-field col-12 lg:col-6 field mb-4">
+            <label>Age</label>
+            <input type="number" class="form-control p-inputtext w-full mb-4" formControlName="age" placeholder="" required>
+          </div>
+          <div class="input-field col-12 lg:col-6 field mb-4">
+            <label>Email</label>
+            <input type="email" formControlName="mail" class="form-control p-inputtext w-full mb-4" required>
+          </div>
+          <div class="input-field col-12 lg:col-6 field mb-4">
+            <label>Numero CNIB</label>
+            <input type="text" formControlName="cnib" class="form-control p-inputtext w-full mb-4" required>
+          </div>
+          <div class="input-field col-12 lg:col-6 field mb-4">
+            <label>Numero de telephone</label>
+            <input type="text" formControlName="phone" class="form-control p-inputtext w-full mb-4" required>
+          </div>
+          <div class="input-field col-12 lg:col-6 field mb-4">
+            <label>Niveau</label>
+            <select class="form-control p-inputtext w-full mb-4" formControlName="niveau">
+              <option>-</option>
+              <option>BAC</option>
+              <option>BAC+1</option>
+              <option>BAC+2</option>
+              <option>BAC+3</option>
+              <option>BAC+4</option>
+              <option>BAC+5</option>
+              <option>BAC+6</option>
+              <option>DOCTORAT</option>
+            </select>
+          </div>
+          <div class="input-field col-12 lg:col-6 field mb-4">
+            <label>Diplome</label>
+            <input type="text" formControlName="diplome" class="form-control p-inputtext w-full mb-4" required>
+          </div>
+          <div class="input-field col-12 lg:col-6 field mb-4">
+            <label>Ville Residence</label>
+            <input type="text" formControlName="ville" class="form-control p-inputtext w-full mb-4" required>
+          </div>
+        </div>
+      </div>
+      <div class="details personnal">
+        <hr>
+        <span class="title1">Informations Stage</span>
+        <div class="fields grid formgrid">
+          <div class="input-field col-12 lg:col-6 field mb-4">
+            <label>Objet</label>
+            <input type="text" formControlName="objet" class="form-control p-inputtext w-full mb-4" placeholder="Ex: Stage en Informatique">
+          </div>
+          <div class="input-field col-12 lg:col-6 field mb-4">
+            <label>Ecole/Université</label>
+            <input type="text" formControlName="ecole" class="form-control p-inputtext w-full mb-4" placeholder="Ex:UNIVERSITE NORBERT ZONGO">
+          </div>
+          <div class="input-field col-12 lg:col-6 field mb-4">
+            <label>Date Debut</label>
+            <input type="month" class="form-control p-inputtext w-full mb-4"  formControlName="dateDebut">
+          </div>
+          <div class="input-field col-12 lg:col-6 field mb-4">
+            <label>Date Fin</label>
+            <input type="month" class="form-control p-inputtext w-full mb-4" formControlName="dateFin">
+          </div>
+        </div>
+      </div> -->
+      <!--    <p-fileUpload (onUpload)="onUpload($event)" [multiple]="true" accept="application/pdf">
+            <ng-template pTemplate="content">
+              <ul *ngIf="uploadedFiles.length">
+                <li *ngFor="let file of uploadedFiles">{{ file.name }} - {{ file.size }} bytes</li>
+              </ul>
+            </ng-template>
+          </p-fileUpload>-->
+      <!--<div class="details personnal">
+        <div class="wrapper">
+          <header>Pièces jointes</header>
+          <form action="#">
+            <input class="file-input" type="file" accept="application/pdf" name="file" hidden>
+            <i class="fas fa-cloud-upload-alt"></i>
+            <p>Parcourir le fichier à télécharger</p>
+          </form>
+          <section class="progress-area"></section>
+          <section class="uploaded-area"></section>
+        </div>
+      </div>-->
+
+<!-- 
+    </div>
+  </form>
+
+
+  <ng-template pTemplate="footer">
+    <div  class="flex justify-content-between gap-3">
+
+      <button pbutton="" pripple="" label="Enregistrer" icon="pi pi-fw pi-check"
+              class="p-element p-ripple p-button-outlined p-button-success flex-1 p-button p-component"
+      ><span
+        class="p-button-icon p-button-icon-left pi pi-fw pi-check" aria-hidden="true"></span><span
+        class="p-button-label">Enregistrer</span><span class="p-ink"></span></button>
+
+      <button  pbutton="" pripple="" label="Annuler"
+               icon="pi pi-times" mat-dialog-close
+               class="p-element p-ripple p-button-danger flex-1 p-button-outlined p-button p-component"><span
+        class="p-button-icon p-button-icon-left pi pi-times" aria-hidden="true"></span><span
+        class="p-button-label">Annuler</span><span class="p-ink"></span></button>
+    </div>
+  </ng-template>
+</p-dialog>
+ -->
+
+
+<div class="grid card grid-nogutter">
+  <div class="container">
+    <div class="text-center"><h2> Demande de stage</h2></div>
+    <form [formGroup]="registrationForm">
+      <div class="form first">
+        <div class="details personnal">
+          <hr>
+          <span class="title1">Informations du postulant</span>
+          <div class="fields grid formgrid">
+            <div class="input-field col-12 lg:col-6 field mb-4">
+              <label>Nom</label>
+              <input type="text" class="form-control p-inputtext w-full mb-4"
+               formControlName="nom" placeholder="" required>
+               <app-public-form-validations [entityField]="'nom'" [formGroup]="registrationForm">
+
+               </app-public-form-validations>
+            </div>
+
+            <div class="input-field col-12 lg:col-6 field mb-4">
+              <label>Prenom</label>
+              <input type="text" class="form-control p-inputtext w-full mb-4"
+               formControlName="prenom" placeholder="" required>
+               <app-public-form-validations [entityField]="'prenom'" [formGroup]="registrationForm">
+
+               </app-public-form-validations>
+            </div>
+
+            <div class="input-field col-12 lg:col-6 field mb-4">
+              <label>Genre</label>
+              <select class="form-control p-inputtext w-full mb-4" formControlName="genre">
+                <option>Femme</option>
+                <option>Homme</option>
+              </select>
+              <app-public-form-validations [entityField]="'genre'" [formGroup]="registrationForm">
+
+              </app-public-form-validations>
+            </div>
+
+            <div class="input-field col-12 lg:col-6 field mb-4">
+              <label>Age</label>
+              <input type="number" class="form-control p-inputtext w-full mb-4"
+               formControlName="age" placeholder="" required>
+               <app-public-form-validations [entityField]="'age'" [formGroup]="registrationForm">
+
+               </app-public-form-validations>
+            </div>
+            <div class="input-field col-12 lg:col-6 field mb-4">
+              <label>Email</label>
+              <input type="email" formControlName="mail"
+               class="form-control p-inputtext w-full mb-4" required>
+               <app-public-form-validations [entityField]="'mail'" [formGroup]="registrationForm">
+
+               </app-public-form-validations>
+            </div>
+            <div class="input-field col-12 lg:col-6 field mb-4">
+              <label>Numero CNIB</label>
+              <input type="text" formControlName="cnib" 
+              class="form-control p-inputtext w-full mb-4" required>
+              <app-public-form-validations [entityField]="'cnib'" [formGroup]="registrationForm">
+
+              </app-public-form-validations>
+            </div>
+            <div class="input-field col-12 lg:col-6 field mb-4">
+              <label>Numero de telephone</label>
+              <input type="text" formControlName="phone" 
+              class="form-control p-inputtext w-full mb-4" required>
+              <app-public-form-validations [entityField]="'phone'" [formGroup]="registrationForm">
+
+              </app-public-form-validations>
+            </div>
+            <div class="input-field col-12 lg:col-6 field mb-4">
+              <label>Niveau</label>
+              <select class="form-control p-inputtext w-full mb-4" formControlName="niveau">
+                <option>-</option>
+                <option>BAC</option>
+                <option>BAC+1</option>
+                <option>BAC+2</option>
+                <option>BAC+3</option>
+                <option>BAC+4</option>
+                <option>BAC+5</option>
+                <option>BAC+6</option>
+                <option>DOCTORAT</option>
+              </select>
+              
+            <app-public-form-validations [entityField]="'niveau'" [formGroup]="registrationForm">
+
+            </app-public-form-validations>
+            </div>
+            <div class="input-field col-12 lg:col-6 field mb-4">
+              <label>Diplome</label>
+              <input type="text" formControlName="diplome"
+               class="form-control p-inputtext w-full mb-4" required>
+               <app-public-form-validations [entityField]="'diplome'" [formGroup]="registrationForm">
+
+               </app-public-form-validations>
+            </div>
+
+            <div class="input-field col-12 lg:col-6 field mb-4">
+              <label>Ville Residence</label>
+              <input type="text" formControlName="ville" 
+              class="form-control p-inputtext w-full mb-4" required>
+              <app-public-form-validations [entityField]="'ville'" [formGroup]="registrationForm">
+
+              </app-public-form-validations>
+            </div>
+
+          </div>
+        </div>
+        <div class="details personnal">
+          <hr>
+          <span class="title1">Informations Stage</span>
+          <div class="fields grid formgrid">
+            <div class="input-field col-12 lg:col-6 field mb-4">
+              <label>Objet</label>
+              <input type="text" formControlName="objet" 
+              class="form-control p-inputtext w-full mb-4" placeholder="Ex: Stage en Informatique">
+              <app-public-form-validations [entityField]="'objet'" [formGroup]="registrationForm">
+
+              </app-public-form-validations>
+            </div>
+            <div class="input-field col-12 lg:col-6 field mb-4">
+              <label>Ecole/Université</label>
+              <input type="text" formControlName="ecole" 
+              class="form-control p-inputtext w-full mb-4" placeholder="Ex:UNIVERSITE NORBERT ZONGO">
+              <app-public-form-validations [entityField]="'ecole'" [formGroup]="registrationForm">
+
+              </app-public-form-validations>
+            </div>
+            <div class="input-field col-12 lg:col-6 field mb-4">
+              <label>Date Debut</label>
+              <input type="month" class="form-control p-inputtext w-full mb-4" 
+               formControlName="dateDebut">
+               <app-public-form-validations [entityField]="'dateDebut'" [formGroup]="registrationForm">
+
+               </app-public-form-validations>
+            </div>
+            <div class="input-field col-12 lg:col-6 field mb-4">
+              <label>Date Fin</label>
+              <input type="month" class="form-control p-inputtext w-full mb-4"
+               formControlName="dateFin">
+               <app-public-form-validations [entityField]="'dateFin'" [formGroup]="registrationForm">
+
+               </app-public-form-validations>
+            </div>
+          </div>
+        </div>
+    <!--    <p-fileUpload (onUpload)="onUpload($event)" [multiple]="true" accept="application/pdf">
+          <ng-template pTemplate="content">
+            <ul *ngIf="uploadedFiles.length">
+              <li *ngFor="let file of uploadedFiles">{{ file.name }} - {{ file.size }} bytes</li>
+            </ul>
+          </ng-template>
+        </p-fileUpload>-->
+        <!--<div class="details personnal">
+          <div class="wrapper">
+            <header>Pièces jointes</header>
+            <form action="#">
+              <input class="file-input" type="file" accept="application/pdf" name="file" hidden>
+              <i class="fas fa-cloud-upload-alt"></i>
+              <p>Parcourir le fichier à télécharger</p>
+            </form>
+            <section class="progress-area"></section>
+            <section class="uploaded-area"></section>
+          </div>
+        </div>-->
+
+
+
+        <div  class="flex justify-content-between gap-3">
+  
+          <button pbutton="" pripple="" label="Enregistrer" icon="pi pi-fw pi-check"
+                  class="p-element p-ripple p-button-outlined p-button-success flex-1 p-button p-component"
+                   (click)="handleSubmit()" 
+          ><span
+            class="p-button-icon p-button-icon-left pi pi-fw pi-check" aria-hidden="true"></span><span
+            class="p-button-label">Enregistrer</span><span class="p-ink"></span></button>
+    
+          <button  pbutton="" pripple="" label="Annuler"
+                   icon="pi pi-times" mat-dialog-close
+                   class="p-element p-ripple p-button-danger flex-1 p-button-outlined p-button p-component"><span
+            class="p-button-icon p-button-icon-left pi pi-times" aria-hidden="true"></span><span
+            class="p-button-label">Annuler</span><span class="p-ink"></span></button>
+        </div>
+
+      </div>
+    </form>
+  </div>
+</div>

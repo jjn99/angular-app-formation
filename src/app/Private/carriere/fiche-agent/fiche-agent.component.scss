@@ -1,0 +1,89 @@
+mat-card{
+  background-color: #fff;
+  color:black;
+  padding: 15px;
+  position: relative;
+  height: 500px;
+  overflow: auto;
+}
+.img-circle{
+  background-image: url("../../../../../assets/Sonabel.png");
+  margin: 5px;
+  width:304px;
+  height:200px;
+  background-repeat: no-repeat;
+}
+.devise{
+  text-align: center;
+}
+h5{
+  font-size:20px;
+}
+.button-container{
+  margin: 10px;
+}
+.button-container button{
+  margin: 10px;
+  align-items: right;
+}
+.column span{
+  margin:5px;
+}
+.card-bodt{
+  position: relative;
+  min-height: 150px;
+  overflow: auto;
+}
+.table{
+  min-height: 100px;
+}
+.td{
+  width:175px;
+  text-align:center;
+  border-right:1px solid white;
+  padding-right: 5px;
+}
+.th{
+  width:175px;
+  text-align:center;
+  border-right:1px solid white;
+  padding-right: 5px;
+}
+.tdpetit{
+  width:75px;
+  text-align:center;
+  border-right:1px solid white;
+  padding-right: 5px;
+}
+.thpetit{
+  width:75px;
+  text-align:center;
+  border-right:1px solid white;
+  padding-right: 5px;
+}
+.button-container{
+  display: flex;
+}
+.btn-download{
+  height:36px;
+  padding:0 16px;
+  border-radius: 36px;
+  background: #263238;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 300px;
+}
+.btn-close{
+  width: 75px;
+  height:36px;
+  padding:0 16px;
+  border-radius: 36px;
+  background: red;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 300px;
+}

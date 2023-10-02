@@ -1,0 +1,158 @@
+<p-dialog header="Header" [(visible)]="visible" [closable]="false" [modal]="true" [style]="{ width: '1000px'}" [draggable]="false" [resizable]="false">
+  <ng-template pTemplate="header">
+    <span class="text-xl font-bold">View</span>
+  </ng-template>
+
+
+  <div class="card">
+    <div class="row">
+      <div class="col-4">
+        <div class="row img-circle">
+        </div>
+        <div class="row">
+          <p class="bi bi-telephone-fill"> : (226) 25 30 61 00 / 02 / 03 / 04</p><br>
+          <p>Fax : (226) 55 31 03 40</p><br>
+          <p>01 B.P OUAGADOUGOU 01.</p><br>
+          <p>www.sonabel.bf</p><br>
+        </div>
+      </div>
+      <div class="col-8">
+        <div class="devise">
+          <h5>SOCIETE NATIONALE D'ELECTRICITE DU BURKINA</h5><br>
+          <p>SOCIETE D'ETAT AU CAPITAL DE 63308270000 FRANCS CFA</p><br>
+          <p>SIEGE SOCIAL : 55, Avenue de la Nation 01 B.P.54 OUAGADOUGOU 01</p>
+        </div>
+      </div>
+    </div>
+    <h5 class="text-center"> Fiche individuelle de formation</h5>
+    <hr>
+    <div class="container">
+      <div class="row">
+        <h3>Information de l'agent</h3>
+        <div class="column">
+          <span>MATRICULE :   {{agentForm.matricule}}</span>
+          <span>NOM PRENOM :   {{agentForm.nomprenom}}</span>
+        </div>
+        <div class="column">
+          <span>CLASSEMENT :   {{agentForm.categorie}}-{{agentForm.echelon}}</span><br>
+          <span>EMPLOI :   {{agentForm.emploi}}</span><br>
+          <span>FONCTION :   {{agentForm.fonction}}</span><br>
+          <span>UNITE :   {{agentForm.unite}}</span>
+        </div>
+
+      </div>
+      <hr>
+      <h3>Liste des formations suivies</h3>
+      <div class="card-bodt">
+        <table class="table">
+          <thead class="thead-dark">
+          <tr>
+            <th scope="col">Libelle de formation</th>
+            <th scope="col">Organisme</th>
+            <th scope="col">Lieu</th>
+            <th scope="col">Type Formation</th>
+            <th scope="col">Date de debut</th>
+            <th scope="col">Date de fin</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let data of dataSource">
+            <td>{{data?.title}}</td>
+            <td>{{data?.Organisme.nom}}</td>
+            <td>{{data?.pays}}/{{data?.ville}}</td>
+            <td>{{data?.typeFormation}}</td>
+            <td>{{data?.dateDebut}}</td>
+            <td>{{data?.dateFin}}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+      <span class="column">Total: {{dataSource?.length}} </span>
+    </div>
+  </div>
+
+  <ng-template pTemplate="footer">
+
+    <div class="button-container">
+      <button class="btn-download bi bi-cloud-arrow-down-fill">Telecharger PDF</button>
+      <button class="btn-close " (click)="close()"  mat-dialog-close="">   Fermer</button>
+    </div>
+
+  </ng-template>
+</p-dialog>
+
+
+
+
+<!-- 
+<div class="card">
+  <div class="row">
+    <div class="col-4">
+      <div class="row img-circle">
+      </div>
+      <div class="row">
+        <p class="bi bi-telephone-fill"> : (226) 25 30 61 00 / 02 / 03 / 04</p><br>
+        <p>Fax : (226) 55 31 03 40</p><br>
+        <p>01 B.P OUAGADOUGOU 01.</p><br>
+        <p>www.sonabel.bf</p><br>
+      </div>
+    </div>
+    <div class="col-8">
+      <div class="devise">
+        <h5>SOCIETE NATIONALE D'ELECTRICITE DU BURKINA</h5><br>
+        <p>SOCIETE D'ETAT AU CAPITAL DE 63308270000 FRANCS CFA</p><br>
+        <p>SIEGE SOCIAL : 55, Avenue de la Nation 01 B.P.54 OUAGADOUGOU 01</p>
+      </div>
+    </div>
+  </div>
+  <h5 class="text-center"> Fiche individuelle de formation</h5>
+  <hr>
+  <div class="container">
+    <div class="row">
+      <h3>Information de l'agent</h3>
+      <div class="column">
+        <span>MATRICULE :   {{agentForm.matricule}}</span>
+        <span>NOM PRENOM :   {{agentForm.nomprenom}}</span>
+      </div>
+      <div class="column">
+        <span>CLASSEMENT :   {{agentForm.categorie}}-{{agentForm.echelon}}</span><br>
+        <span>EMPLOI :   {{agentForm.emploi}}</span><br>
+        <span>FONCTION :   {{agentForm.fonction}}</span><br>
+        <span>UNITE :   {{agentForm.unite}}</span>
+      </div>
+
+    </div>
+    <hr>
+    <h3>Liste des formations suivies</h3>
+    <div class="card-bodt">
+      <table class="table">
+        <thead class="thead-dark">
+        <tr>
+          <th scope="col">Libelle de formation</th>
+          <th scope="col">Organisme</th>
+          <th scope="col">Lieu</th>
+          <th scope="col">Type Formation</th>
+          <th scope="col">Date de debut</th>
+          <th scope="col">Date de fin</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let formation of agentForm.listFormations">
+          <td>{{formation.title}}</td>
+          <td>{{formation.Organisme.nom}}</td>
+          <td>{{formation.Lieu.lieu}}/{{formation.Lieu.ville}}</td>
+          <td>{{formation.typeFormation}}</td>
+          <td>{{formation.dateDebut}}</td>
+          <td>{{formation.dateFin}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <span class="column">Total: </span>
+  </div>
+</div>
+<div class="button-container">
+  <button class="btn-download bi bi-cloud-arrow-down-fill">Telecharger PDF</button>
+  <button class="btn-close bi bi-x-circle-fill" mat-dialog-close="">   Fermer</button>
+</div>
+ -->

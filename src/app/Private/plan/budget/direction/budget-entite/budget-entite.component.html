@@ -1,0 +1,60 @@
+<p-toast></p-toast>
+<div class="card">
+  <div class="container">
+    <div class="text-center"><h4> Formulaire Budget</h4></div>
+    <form [formGroup]="registrationForm">
+      <div class="form first">
+        <div class="details personnal">
+          <hr>
+          <div class="fields">
+            <div class="input-field">
+              <label>Budget Alloue</label>
+              <input type="number" formControlName="budgetalloue" 
+              class="form-control p-inputtext p-component p-element" placeholder="" required>
+              <app-valid-budget [entityField]="'budgetalloue'"
+              [formGroup]="registrationForm"></app-valid-budget>
+            </div>
+            <div class="input-field">
+              <label>Date des plans de formation</label>
+              <input type="text" formControlName="datePlan" 
+              class="form-control p-inputtext p-component p-element"
+              placeholder="Ex: 2021-2022" required>
+              <app-valid-budget [entityField]="'datePlan'"
+              [formGroup]="registrationForm"></app-valid-budget>
+            </div>
+
+          </div>
+          <div class="fields1">
+            <div class="input-field">
+              <label>Direction</label>
+              <select formControlName="idEntite" placeholder="Choisir la direction" class="form-control p-inputtext p-component p-element" required>
+                <option *ngFor="let direction of directions" [value]="direction?.idEntite">{{direction?.nom}}({{direction?.codeinputation}})</option>
+              </select>
+              <app-valid-budget [entityField]="'idEntite'"
+              [formGroup]="registrationForm"></app-valid-budget>
+            </div>
+          </div>
+          <hr>
+
+          <div  class="flex justify-content-between gap-3">
+
+            <button  pbutton="" pripple="" label="Enregistrer" icon="pi pi-fw pi-check"
+                    class="p-element p-ripple p-button-outlined p-button-success flex-1 p-button p-component"
+                    [disabled]="registrationForm.invalid" (click)="handleSubmit()"
+                    ><span
+              class="p-button-icon p-button-icon-left pi pi-fw pi-check" aria-hidden="true"></span><span
+              class="p-button-label">Enregistrer</span><span class="p-ink"></span></button>
+
+              <button  pbutton="" pripple="" label="Annuler" 
+                     matDialogClose icon="pi pi-times"
+                      class="p-element p-ripple p-button-danger flex-1 p-button-outlined p-button p-component"><span
+                class="p-button-icon p-button-icon-left pi pi-times" aria-hidden="true"></span><span
+                class="p-button-label">Annuler</span><span class="p-ink"></span></button>
+          </div>
+
+
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

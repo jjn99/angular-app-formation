@@ -1,0 +1,187 @@
+<p-dialog header="Header" [(visible)]="visible" 
+          [closable]="false" [modal]="true" 
+          [style]="{ width: '800px' }" (onHide)="onHide"
+          [draggable]="false" [resizable]="false">
+  <ng-template pTemplate="header">
+    <span class="text-xl font-bold">Formulaire Departement</span>
+  </ng-template>
+  <form [formGroup]="registrationForm">
+    <div class="form first">
+      <div class="details personnal">
+        <hr>
+        <div class="fields grid formgrid">
+          <div class="input-field col-12 mb-2 lg:col-4 lg:mb-0">
+            <label>Code Imputation</label>
+            <input type="text" formControlName="codeinputation"
+                   class="form-control p-inputtext p-component p-element" required>
+                   <app-valid-service [entityField]="'codeinputation'" [formGroup]="registrationForm">
+                    
+                   </app-valid-service>
+          </div>
+          <div class="input-field col-12 mb-2 lg:col-4 lg:mb-0">
+            <label>Nom</label>
+            <input type="text" formControlName="nom"
+                   class="form-control p-inputtext p-component p-element" required>
+                   <app-valid-service [entityField]="'nom'" [formGroup]="registrationForm">
+                    
+                   </app-valid-service>
+          </div>
+        </div>
+        <div class="fields grid formgrid">
+          <div class="input-field w-full">
+            <label>Entite</label>
+            <select formControlName="idEntite" class="form-control p-inputtext p-component p-element" required>
+              <option *ngFor="let direction of directions" [value]="direction?.idEntite">{{direction?.nom}}({{direction?.codeinputation}})</option>
+            </select>
+            <app-valid-service [entityField]="'idEntite'" [formGroup]="registrationForm">
+                    
+            </app-valid-service>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+  <ng-template pTemplate="footer">
+    <div  class="flex justify-content-between gap-3">
+
+      <button pbutton="" pripple="" label="Enregistrer" icon="pi pi-fw pi-check"
+              class="p-element p-ripple p-button-outlined p-button-success flex-1 p-button p-component"
+              [disabled]="registrationForm.invalid" (click)="handleSubmit()"
+      ><span
+        class="p-button-icon p-button-icon-left pi pi-fw pi-check" aria-hidden="true"></span><span
+        class="p-button-label">Enregistrer</span><span class="p-ink"></span></button>
+
+      <button  pbutton="" pripple="" label="Annuler" (click)="close()"
+               icon="pi pi-times" mat-dialog-close
+               class="p-element p-ripple p-button-danger flex-1 p-button-outlined p-button p-component"><span
+        class="p-button-icon p-button-icon-left pi pi-times" aria-hidden="true"></span><span
+        class="p-button-label">Annuler</span><span class="p-ink"></span></button>
+    </div>
+  </ng-template>
+</p-dialog>
+
+
+<!--<div class="card">
+  <div class="container">
+    <div class="title"><header> Formulaire Enregistrement Departement</header></div>
+    <form [formGroup]="registrationForm">
+      <div class="form first">
+        <div class="details personnal">
+          <hr>
+          <div class="fields grid formgrid">
+            <div class="input-field">
+              <label>code Imputation</label>
+              <input type="text" formControlName="codeinputation" 
+              placeholder="Entrez le code imputation du departement" 
+             class="form-control" required>
+             <app-valid-service [entityField]="'codeinputaion'"
+             [formGroup]="registrationForm"></app-valid-service>
+            </div>
+            <div class="input-field">
+              <label>Nom</label>
+              <input type="text" formControlName="nom" 
+              placeholder="Entrez le nom du departement" 
+              class="form-control" required>
+              <app-valid-service [entityField]="'nom'"
+              [formGroup]="registrationForm"></app-valid-service>
+            </div>
+          </div>
+          <div class="fields1">
+            <div class="input-field">
+              <label>Entite</label>
+              <input type="text" formControlName="idEntite" 
+              placeholder="Choisir la direction de tutelle " list="entitiesList" 
+              class="form-control" required>
+              <datalist id="entitiesList" >
+                <option ></option>
+              </datalist>
+              <app-valid-service [entityField]="'idEntite'"
+              [formGroup]="registrationForm"></app-valid-service>
+            </div>
+          </div>
+          <hr>
+          <div  class="flex justify-content-between gap-3">
+
+            <button  pbutton="" pripple="" label="Enregistrer" icon="pi pi-fw pi-check"
+                    class="p-element p-ripple p-button-outlined p-button-success flex-1 p-button p-component"
+                    [disabled]="registrationForm.invalid" (click)=" handleSubmit()"
+                    ><span
+              class="p-button-icon p-button-icon-left pi pi-fw pi-check" aria-hidden="true"></span><span
+              class="p-button-label">Enregistrer</span><span class="p-ink"></span></button>
+
+              <button  pbutton="" pripple="" label="Annuler" 
+                     matDialogClose icon="pi pi-times"
+                      class="p-element p-ripple p-button-danger flex-1 p-button-outlined p-button p-component"><span
+                class="p-button-icon p-button-icon-left pi pi-times" aria-hidden="true"></span><span
+                class="p-button-label">Annuler</span><span class="p-ink"></span></button>
+          </div>
+
+        </div>
+      </div>
+    </form>
+  </div>
+</div>-->
+
+
+<!-- <p-toast></p-toast>
+<div class="card">
+  <div class="container">
+    <div class="title"><header> Formulaire Enregistrement Departement</header></div>
+    <form [formGroup]="registrationForm">
+      <div class="form first">
+        <div class="details personnal">
+          <hr>
+          <div class="fields">
+            <div class="input-field">
+              <label>code Imputation</label>
+              <input type="text" formControlName="codeinputation" 
+              placeholder="Entrez le code imputation du departement" 
+             class="form-control" required>
+             <app-valid-service [entityField]="'codeinputaion'"
+             [formGroup]="registrationForm"></app-valid-service>
+            </div>
+            <div class="input-field">
+              <label>Nom</label>
+              <input type="text" formControlName="nom" 
+              placeholder="Entrez le nom du departement" 
+              class="form-control" required>
+              <app-valid-service [entityField]="'nom'"
+              [formGroup]="registrationForm"></app-valid-service>
+            </div>
+          </div>
+          <div class="fields1">
+            <div class="input-field">
+              <label>Entite</label>
+              <input type="text" formControlName="idEntite" 
+              placeholder="Choisir la direction de tutelle " list="entitiesList" 
+              class="form-control" required>
+              <datalist id="entitiesList" >
+                <option ></option>
+              </datalist>
+              <app-valid-service [entityField]="'idEntite'"
+              [formGroup]="registrationForm"></app-valid-service>
+            </div>
+          </div>
+          <hr>
+          <div  class="flex justify-content-between gap-3">
+
+            <button  pbutton="" pripple="" label="Enregistrer" icon="pi pi-fw pi-check"
+                    class="p-element p-ripple p-button-outlined p-button-success flex-1 p-button p-component"
+                    [disabled]="registrationForm.invalid" (click)=" handleSubmit()"
+                    ><span
+              class="p-button-icon p-button-icon-left pi pi-fw pi-check" aria-hidden="true"></span><span
+              class="p-button-label">Enregistrer</span><span class="p-ink"></span></button>
+
+              <button  pbutton="" pripple="" label="Annuler" 
+                     matDialogClose icon="pi pi-times"
+                      class="p-element p-ripple p-button-danger flex-1 p-button-outlined p-button p-component"><span
+                class="p-button-icon p-button-icon-left pi pi-times" aria-hidden="true"></span><span
+                class="p-button-label">Annuler</span><span class="p-ink"></span></button>
+          </div>
+
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+ -->
